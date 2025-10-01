@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizzaria Campy — Carapicuíba</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Pizzaria Campy — pizzas, hambúrgueres e esfihas. Delivery em Carapicuíba. Peça pelo site!" />
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="conteudo">
+    <cabecalho>
+      <div class="marca">
+        <div class="logo">PC</div>
+        <div>
+          <h1 class="titulo-marca">Pizzaria Campy</h1>
+          <p class="subtitulo-marca">Delivery • Carapicuíba</p>
+        </div>
+      </div>
+      <div class="botoes">
+        <button class="botao botao-contorno" id="botao-menu">Menu</button>
+        <button class="botao" id="botao-carrinho">Carrinho (0)</button>
+      </div>
+    </cabecalho>
+
+    <main>
+      <section class="destaque">
+        <div class="conteudo-destaque">
+          <h2 class="titulo-destaque">O sabor da pizza artesanal em Carapicuíba</h2>
+          <p class="texto-destaque">Massa leve, ingredientes frescos e o charme rústico da nossa casa.</p>
+          <button class="botao" onclick="rolarPara('cardapio')">Ver cardápio</button>
+        </div>
+      </section>
+
+      <div class="barra-busca">
+        <input id="entrada-busca" placeholder="Buscar pizza, hambúrguer ou esfiha..." />
+      </div>
+
+      <div class="categorias">
+        <div class="categoria ativa" data-categoria="todas">Todas</div>
+        <div class="categoria" data-categoria="pizza">Pizzas</div>
+        <div class="categoria" data-categoria="hamburguer">Hambúrgueres</div>
+        <div class="categoria" data-categoria="esfiha">Esfihas</div>
+        <div class="categoria" data-categoria="bebida">Bebidas</div>
+      </div>
+
+      <section id="cardapio">
+        <h3>Cardápio</h3>
+        <div id="grade-cardapio" class="grade-cardapio"></div>
+        <div id="mensagem-vazio" style="display:none;color: var(--neutro)">Nenhum item encontrado.</div>
+      </section>
+    </main>
+
+    <footer>
+      <strong>Pizzaria Campy</strong> — Carapicuíba/SP<br>
+      © 2025 • Todos os direitos reservados
+    </footer>
+  </div>
+
+  <div class="barra-carrinho" id="barra-carrinho">
+    <div>
+      <div id="contador-itens">0 itens</div>
+      <div id="total-carrinho">R$ 0,00</div>
+    </div>
+    <button class="botao botao-contorno" onclick="abrirModal()">Ver</button>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-conteudo">
+      <h4 id="titulo-modal">Detalhes</h4>
+      <div id="corpo-modal"></div>
+      <button class="botao botao-contorno" onclick="fecharModal()">Fechar</button>
+    </div>
+  </div>
+
+<script src="index.js">console.log('hello in we website')</script>
+</body>
+</html>
