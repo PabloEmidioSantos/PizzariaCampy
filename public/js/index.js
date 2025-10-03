@@ -1,5 +1,5 @@
 // index.js
-import cardapio from './cardapios.js';
+import cardapio from './cardapio.js';
 
 const grade = document.getElementById('grade-cardapio');
 const carrinho = {};
