@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORTA = 7454;
+const PORTA = 7229;
 
 // Middleware para ler JSON
 app.use(express.json());
