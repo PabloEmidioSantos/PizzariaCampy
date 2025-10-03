@@ -1,0 +1,13 @@
+<h1>Finalizar Pagamento</h1>
+
+<ul>
+  {{#each carrinho}}
+    <li>{{nome}} - R$ {{preco}}</li>
+  {{/each}}
+</ul>
+
+<h3>Total: R$ {{total}}</h3>
+
+<form action="/processar-pagamento" method="POST">
+  <button type="submit">Pagar com Pix</button>
+</form>
