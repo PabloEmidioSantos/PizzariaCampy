@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORTA = 8009;
+const PORTA = 7543;
 
 // Configuração do Handlebars
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
@@ -22,21 +22,28 @@ app.use(express.urlencoded({ extended: true }));
 // Servir arquivos estáticos (CSS, JS, imagens)
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Rota Home - apenas redireciona para index.html
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
-});
 
-// Rota Pagamento (exemplo)
-app.get('/pagamento', (req, res) => {
-  const carrinho = [
-    { nome: 'Pizza Margherita', preco: 34.9 },
-    { nome: 'Esfiha de Carne', preco: 9.9 }
-  ];
 
-  const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
-  res.render('pagamento', { carrinho, total });
-});
+
+                    //      -----------------------ROTAS------------------------      //
+
+
+
+          // Rota Home - apenas redireciona para index.html
+          app.get('/', (req, res) => {
+            res.sendFile(path.join(__dirname, 'public/index.html'));
+          });
+
+          // Rota Pagamento (exemplo)
+          app.get('/pagamento', (req, res) => {
+            const carrinho = [
+              { nome: 'Pizza Margherita', preco: 34.9 },
+              { nome: 'Esfiha de Carne', preco: 9.9 }
+            ];
+
+            const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
+            res.render('pagamento', { carrinho, total });
+          });
 
 // Aqui você vai adicionar POST /processar-pagamento mais tarde
 
